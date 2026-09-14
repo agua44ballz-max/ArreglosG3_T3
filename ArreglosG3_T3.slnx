@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Arreglos-Logida/Arreglos-Logida.csproj" />
+  <Project Path="Arreglos.Ui.Consola/Arreglos.Ui.Consola.csproj" />
+</Solution>
