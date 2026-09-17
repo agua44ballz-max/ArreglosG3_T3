@@ -37,16 +37,54 @@ namespace Arreglos.Logica
 
 
         }
+        //Metodo ordenar
+        public void Ordenar()
+        {
+            for (int i = 0; i < _tope - 1; i++)
+            {
+                for (int j = i+1; j < _tope; j++)
+                {
+                    if (_arreglo[i] > _arreglo[j])
+                    {
+                        Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                    }
+                }
+            }
+        }
+
+        //Método cambiar
+        public void Cambiar(ref int a, ref int b)
+        {
+
+            int aux = a;
+            a = b;
+            b = aux;
+
+        }
+
+        //Metodo ToString para mostrar el arreglo
         public override string ToString()
         {
             if (Estavacio)
             {
                 Console.WriteLine("El arreglo esta vacio");
             }
+
+            int contador = 0;
             string salida = string.Empty;
-            for (int i = 0; i < N; i++)
+            for (int i = 0; i < _tope; i++)
             {
+
                 salida += $"{_arreglo[i]}\t";
+                contador++;
+                if (contador > 9)
+                {
+                    contador = 0;
+                    //salida = salida + "\n";
+                    salida += "\n";
+                }
+                
+
             }
             return salida;
 
