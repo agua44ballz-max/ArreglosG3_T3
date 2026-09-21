@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Schema;
 
 namespace Arreglos.Logica
 {
@@ -22,7 +23,7 @@ namespace Arreglos.Logica
         //Propiedades
         public int N { get; }
 
-        public bool Esatalleno => _tope == N;
+        public bool Estalleno => _tope == N;
         public bool Estavacio => _tope == 0;
 
         //Metodos 
@@ -37,16 +38,34 @@ namespace Arreglos.Logica
 
 
         }
-        //Metodo ordenar
+        //Metodo ordenar (burbuja)
         public void Ordenar()
+
+        {
+            Ordenar(true);
+
+        }
+
+        public void Ordenar(bool ascendente)
         {
             for (int i = 0; i < _tope - 1; i++)
             {
-                for (int j = i+1; j < _tope; j++)
+                for (int j = i + 1; j < _tope; j++)
                 {
-                    if (_arreglo[i] > _arreglo[j])
+                    if (ascendente)
                     {
-                        Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        if (_arreglo[i] > _arreglo[j])
+                        {
+                            Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        }
+                    }
+                    else
+                    {
+                        if (_arreglo[i] < _arreglo[j])
+                        {
+                            Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        }
+
                     }
                 }
             }
@@ -62,6 +81,18 @@ namespace Arreglos.Logica
 
         }
 
+        // metodo agaregar 
+        public void Agregar(int numero)
+        {
+            if (Estalleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+            }
+            _arreglo[_tope] = numero;
+
+            _tope++;
+
+        }
         //Metodo ToString para mostrar el arreglo
         public override string ToString()
         {
@@ -83,7 +114,7 @@ namespace Arreglos.Logica
                     //salida = salida + "\n";
                     salida += "\n";
                 }
-                
+
 
             }
             return salida;

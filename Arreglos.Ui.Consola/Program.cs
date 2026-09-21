@@ -5,15 +5,45 @@ Console.WriteLine("Arreglos");
 
 MiArreglo oMiArreglo = new MiArreglo(10);
 
-oMiArreglo.Llenar(1, 100);
 
 
-Console.WriteLine("Arreglo desordenado");
-Console.WriteLine(oMiArreglo);
-//oMyArreglo.ToString();
+try
+{
 
-Console.WriteLine("Arreglo ordenado");
-oMiArreglo.Ordenar();
-Console.WriteLine(oMiArreglo);
+    for(int i = 0; i < oMiArreglo.N; i++)
+    {
+        oMiArreglo.Agregar(i*5);
+    }
 
-Console.ReadKey();
+    Console.WriteLine(oMiArreglo);
+
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+
+}
+
+
+
+
+//MiArreglo oMiArreglo = new MiArreglo(10);
+
+//oMiArreglo.Llenar(1, 100);
+
+////oMyArreglo.ToString();
+
+//Console.WriteLine("Arreglo desordenado");
+//Console.WriteLine(oMiArreglo);
+
+
+//Console.WriteLine("Arreglo ordenado ascendente");
+//oMiArreglo.Ordenar();
+//Console.WriteLine(oMiArreglo);
+
+
+//Console.WriteLine("Arreglo ordenado descendente");
+//oMiArreglo.Ordenar();
+//Console.WriteLine(oMiArreglo);
+
+//Console.ReadKey();
