@@ -93,6 +93,50 @@ namespace Arreglos.Logica
             _tope++;
 
         }
+        //Método insertar 
+        public void Insertar(int numero, int posicion)
+        {
+            if (Estalleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+            }
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for (int i = _tope; i > posicion; i--)
+            {
+                _arreglo[i] = _arreglo[i - 1];
+            }
+            _arreglo[posicion] = numero;
+            _tope++;
+        }
+
+        //Método eliminar 
+        public void Eliminar(int posicion)
+        {
+            if (Estavacio)
+            {
+                throw new Exception("El arreglo esta vacio");
+            }
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for (int i = posicion; i < _tope - 1; i++)
+            {
+                _arreglo[i] = _arreglo[i + 1];
+            }
+            _tope--;
+        }
         //Metodo ToString para mostrar el arreglo
         public override string ToString()
         {
@@ -120,6 +164,7 @@ namespace Arreglos.Logica
             return salida;
 
         }
+
 
     }
 }

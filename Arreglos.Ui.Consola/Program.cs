@@ -1,49 +1,61 @@
 ﻿
 using Arreglos.Logica;
 
-Console.WriteLine("Arreglos");
+Console.WriteLine("Arreglos\n");
 
-MiArreglo oMiArreglo = new MiArreglo(10);
+MiArreglo oMyArreglo = new(5);
+oMyArreglo.Agregar(3);
+oMyArreglo.Agregar(5);
+oMyArreglo.Agregar(7);
 
+oMyArreglo.Insertar(2, 0);
+Console.WriteLine(oMyArreglo);
+Console.WriteLine("-------------------------");
 
-
-try
-{
-
-    for(int i = 0; i < oMiArreglo.N; i++)
-    {
-        oMiArreglo.Agregar(i*5);
-    }
-
-    Console.WriteLine(oMiArreglo);
-
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-
-}
+oMyArreglo.Eliminar(1);
+Console.WriteLine(oMyArreglo);
 
 
 
 
-//MiArreglo oMiArreglo = new MiArreglo(10);
 
-//oMiArreglo.Llenar(1, 100);
+//try
+//{
+//    for (int i = 0; i < oMyArreglo.N; i++) 
+//    {
+//        oMyArreglo.Agregar(i * 6);
 
-////oMyArreglo.ToString();
+//    }
+//    oMyArreglo.Agregar(6);
+//    Console.WriteLine(oMyArreglo);
+
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+
+//}
+
+//Console.WriteLine("Arreglos");
+
+//MiArreglo oMyArreglo = new MiArreglo(10);
+
+//// oMyArreglo.Llenar(1, 100);
+
 
 //Console.WriteLine("Arreglo desordenado");
-//Console.WriteLine(oMiArreglo);
-
+//Console.WriteLine(oMyArreglo);
+////oMyArreglo.ToString();
 
 //Console.WriteLine("Arreglo ordenado ascendente");
-//oMiArreglo.Ordenar();
-//Console.WriteLine(oMiArreglo);
+//oMyArreglo.Ordenar(true); // con o sin true debe funcionar correctamente 
+//Console.WriteLine(oMyArreglo);
+
+//Console.WriteLine("Arreglo ordenado adescendente");
+//oMyArreglo.Ordenar(false);
+//Console.WriteLine(oMyArreglo);
 
 
-//Console.WriteLine("Arreglo ordenado descendente");
-//oMiArreglo.Ordenar();
-//Console.WriteLine(oMiArreglo);
+Console.ReadKey();
 
-//Console.ReadKey();
+// Versión 03: Estructura base para la siguiente clase
