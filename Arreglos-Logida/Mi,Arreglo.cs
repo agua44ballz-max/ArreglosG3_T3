@@ -27,6 +27,13 @@ namespace Arreglos.Logica
         public bool Estavacio => _tope == 0;
 
         //Metodos 
+        public void llenar()
+        {
+          Llenar (1, 100);
+
+        }   
+
+        //Metodo llenar con parametprd
         public void Llenar(int minimo, int maximo)
         {
             Random random = new Random();
